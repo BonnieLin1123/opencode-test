@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Project Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>My Project Demo</h1>
+    <p class="intro">
+      A small one-page showcase of selected projects. Filter the list by tag to
+      find what interests you. Everything here runs without dependencies.
+    </p>
+  </header>
+
+  <main>
+    <section id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
+      <p class="section-intro">Pick a tag to narrow the list.</p>
+
+      <div class="filters" role="group" aria-label="Filter projects by tag">
+        <button type="button" class="filter-btn is-active" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="filter-btn" data-filter="web" aria-pressed="false">Web</button>
+        <button type="button" class="filter-btn" data-filter="tools" aria-pressed="false">Tools</button>
+        <button type="button" class="filter-btn" data-filter="writing" aria-pressed="false">Writing</button>
+      </div>
+
+      <ul class="project-list" id="project-list" aria-live="polite">
+        <li class="project-card" data-tags="web tools">
+          <h3>Site Starter Kit</h3>
+          <p>A minimal multi-page template with an accessible nav and form styles.</p>
+          <p class="tags">
+            <span class="tag tag-web">web</span>
+            <span class="tag tag-tools">tools</span>
+          </p>
+        </li>
+        <li class="project-card" data-tags="web">
+          <h3>Reading List Widget</h3>
+          <p>Client-side filter for a personal library. No build step required.</p>
+          <p class="tags">
+            <span class="tag tag-web">web</span>
+          </p>
+        </li>
+        <li class="project-card" data-tags="tools">
+          <h3>CSV to JSON Helper</h3>
+          <p>A small command-line style script that converts tabular data.</p>
+          <p class="tags">
+            <span class="tag tag-tools">tools</span>
+          </p>
+        </li>
+        <li class="project-card" data-tags="writing">
+          <h3>Design Notes Essay</h3>
+          <p>Short write-up on layout, spacing, and type choices.</p>
+          <p class="tags">
+            <span class="tag tag-writing">writing</span>
+          </p>
+        </li>
+      </ul>
+
+      <p class="sr-only" id="filter-status" aria-live="polite"></p>
+    </section>
+
+    <section id="process" aria-labelledby="process-heading">
+      <h2 id="process-heading">How I work</h2>
+      <div class="process-grid">
+        <article>
+          <h3>How I build</h3>
+          <p>
+            Start small: ship the simplest usable version, then iterate based on
+            feedback. Keep markup semantic and dependencies at zero.
+          </p>
+        </article>
+        <article>
+          <h3>What I learned</h3>
+          <p>
+            Clear structure beats clever tricks. Accessibility and responsive
+            layout are easier when planned from the first commit.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Replace this line with your contact info or project links.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
