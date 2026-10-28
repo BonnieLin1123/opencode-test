@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bonnie | Personal Homepage</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-content">
+      <h1>Bonnie</h1>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#pets">My Pets</a></li>
+          <li><a href="#projects">My Projects</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false">
+        🌙
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section id="hero" class="hero">
+      <h2>Hi, I'm Bonnie</h2>
+      <p>I'm a Data Science undergraduate at Boston University from Taiwan. I love turning data into stories, building small web projects, and spending time with my cat Curry and dog Piggy. Nice to meet you!</p>
+    </section>
+
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Me</h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Where I'm from</h3>
+          <p>I'm from Taiwan.</p>
+        </div>
+        <div class="about-card">
+          <h3>My major</h3>
+          <p>I'm studying Data Science at Boston University, graduating in May 2027.</p>
+        </div>
+        <div class="about-card">
+          <h3>Favorite movie</h3>
+          <p>Interstellar — I love how it blends breathtaking space visuals with a deeply emotional story about love, time, and connection.</p>
+        </div>
+      </div>
+      <h3>My interests</h3>
+      <ul class="interests-list">
+        <li>Data science</li>
+        <li>Movies</li>
+        <li>Travel</li>
+        <li>Photography</li>
+        <li>Playing with my pets</li>
+      </ul>
+    </section>
+
+    <section id="pets" aria-labelledby="pets-heading">
+      <h2 id="pets-heading">My Pets</h2>
+      <div class="pets-grid">
+        <article class="pet-card">
+          <div class="pet-placeholder">🐱</div>
+          <h3>Curry</h3>
+          <p class="pet-short">My curious cat who loves napping in sunbeams and knocking things off my desk.</p>
+          <button class="expand-btn" id="expand-curry" aria-expanded="false" aria-controls="curry-details">Learn more</button>
+          <div class="pet-details" id="curry-details" hidden>
+            <p>Curry is a gentle orange tabby who follows me around the apartment and insists on supervising every coding session. Her favorite toy is a crumpled receipt.</p>
+          </div>
+        </article>
+        <article class="pet-card">
+          <div class="pet-placeholder">🐶</div>
+          <h3>Piggy</h3>
+          <p class="pet-short">My energetic dog who thinks every walk is an adventure and every treat is a celebration.</p>
+          <button class="expand-btn" id="expand-piggy" aria-expanded="false" aria-controls="piggy-details">Learn more</button>
+          <div class="pet-details" id="piggy-details" hidden>
+            <p>Piggy is a goofy golden retriever mix with a tail that never stops wagging. She loves stealing socks and greeting everyone like they're her best friend.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">My Projects</h2>
+      <p class="projects-intro">Three projects from my data science and cybersecurity coursework.</p>
+      <div class="filter-group" role="group" aria-label="Filter projects by category">
+        <button type="button" class="filter-btn is-active" data-category="all" aria-pressed="true">All</button>
+        <button type="button" class="filter-btn" data-category="Machine Learning" aria-pressed="false">Machine Learning</button>
+        <button type="button" class="filter-btn" data-category="Digital Forensics" aria-pressed="false">Digital Forensics</button>
+        <button type="button" class="filter-btn" data-category="Threat Intelligence" aria-pressed="false">Threat Intelligence</button>
+      </div>
+      <ul class="project-grid" id="project-grid">
+        <li class="project-card" data-category="Machine Learning">
+          <article>
+            <h3>Cyberattack Detection with Machine Learning</h3>
+            <span class="tag">Machine Learning</span>
+            <p>I trained an image-recognition AI to detect cyberattacks in network traffic.</p>
+            <div class="skill-chips">
+              <span class="skill-chip">Python</span>
+              <span class="skill-chip">Transfer learning</span>
+              <span class="skill-chip">Fine-tuning a CNN (ResNet-18)</span>
+              <span class="skill-chip">Handling imbalanced data (class weights, SMOTE)</span>
+              <span class="skill-chip">Data preprocessing</span>
+              <span class="skill-chip">Model evaluation (macro F1)</span>
+              <span class="skill-chip">Jupyter / Colab</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/BonnieLin1123/Cyberattack-Detection-ml" class="btn-github" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+              <a href="https://colab.research.google.com/drive/1rKbMLPdciBNV2YSoCrllWk5QQ0ttJRJM" class="btn-colab" target="_blank" rel="noopener noreferrer">Colab notebook</a>
+            </div>
+            <button class="expand-btn" id="expand-p1" aria-expanded="false" aria-controls="p1-details">Read more</button>
+            <div class="project-details" id="p1-details" hidden>
+              <div class="detail-part">
+                <p class="detail-label">Purpose</p>
+                <p>Traditional security systems use fixed rules, which struggle with new kinds of attacks. I wanted to test whether a model pretrained on everyday photos (ResNet-18) could be reused to learn attack patterns directly from data. This was a course project for DS340 Machine Learning, done with a teammate.</p>
+              </div>
+              <div class="detail-part">
+                <p class="detail-label">What I did</p>
+                <p>I used the NSL-KDD dataset, where each network connection has 41 measurements and belongs to one of five classes: Normal, DoS, Probe, R2L, and U2R. I turned each connection's measurements into a small 32x32 image so the model could "look" at it, then fine-tuned ResNet-18 in two stages. Some attack types are extremely rare (U2R is only 0.04% of the data), so I compared several fixes: class weights, SMOTE (creating synthetic examples of rare classes), and merging the two rarest classes into one "Others" class. My best model scored 0.74 macro F1 (an accuracy score that counts rare classes equally), about 25% better than the 0.59 Random Forest baseline.</p>
+              </div>
+              <div class="detail-part">
+                <p class="detail-label">What I learned</p>
+                <p>No single fix for imbalanced data solved everything, because each one had a trade-off. For example, class weights helped one rare class but hurt another. Changing how the classes were defined (merging the two rarest) helped more than any reweighting trick, so how you frame the problem can matter as much as the model. Detecting rare attacks is still an open problem: even my best model only found 19% of the "Others" attacks.</p>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="project-card" data-category="Digital Forensics">
+          <article>
+            <h3>File Carver</h3>
+            <span class="tag">Digital Forensics</span>
+            <p>A C program that recovers deleted or hidden files from a raw disk image.</p>
+            <div class="skill-chips">
+              <span class="skill-chip">C programming</span>
+              <span class="skill-chip">Digital forensics (file carving)</span>
+              <span class="skill-chip">Binary file formats and signatures</span>
+              <span class="skill-chip">Probability and false-alarm analysis</span>
+              <span class="skill-chip">Shell scripting</span>
+              <span class="skill-chip">Python</span>
+              <span class="skill-chip">SHA-256 verification</span>
+              <span class="skill-chip">Technical writing</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/BonnieLin1123/file-carver" class="btn-github" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+            </div>
+            <button class="expand-btn" id="expand-p2" aria-expanded="false" aria-controls="p2-details">Read more</button>
+            <div class="project-details" id="p2-details" hidden>
+              <div class="detail-part">
+                <p class="detail-label">Purpose</p>
+                <p>When a file is deleted, its data can still sit on the disk even though the file system no longer points to it. I built this as a digital forensics (DFIR) learning project to understand how investigators recover that data.</p>
+              </div>
+              <div class="detail-part">
+                <p class="detail-label">What I did</p>
+                <p>I wrote a small tool in C that scans a disk image byte by byte, looks for the special start and end bytes ("signatures") of PNG, JPEG, and PDF files, and recovers them. The disk image is opened read-only, so the evidence is never modified. I tested it on disk images I built myself, so I always knew the correct answer, and checked each recovered file with a SHA-256 hash. I also measured false alarms by running it on 200 random disks with nothing hidden.</p>
+              </div>
+              <div class="detail-part">
+                <p class="detail-label">What I learned</p>
+                <p>A short start signature produces false alarms: a 3-byte JPEG signature gave 46 false hits on 200 random disks, close to the 50 that probability predicted. A false start can even swallow a real file, so a total file count that looks right can hide a lost file. Using longer, more specific signatures cut false alarms from 46 to 1, but the tool now misses some JPEG variants, which taught me that there is always a trade-off between avoiding false alarms and catching everything. I also learned to be honest about limits: it has only been tested on synthetic disks, and it cannot recover fragmented files.</p>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="project-card" data-category="Threat Intelligence">
+          <article>
+            <h3>SSH Honeypot Threat Intelligence Report</h3>
+            <span class="tag">Threat Intelligence</span>
+            <p>I am analyzing real attack data from a decoy SSH server to understand how attackers behave.</p>
+            <div class="skill-chips">
+              <span class="skill-chip">Python</span>
+              <span class="skill-chip">pandas</span>
+              <span class="skill-chip">Jupyter</span>
+              <span class="skill-chip">Data cleaning and pipeline design</span>
+              <span class="skill-chip">Honeypot log analysis (Cowrie)</span>
+              <span class="skill-chip">Threat intelligence</span>
+              <span class="skill-chip">Privacy-aware data handling</span>
+              <span class="skill-chip">Data validation</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/BonnieLin1123/honeypot-cti-report" class="btn-github" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+            </div>
+            <button class="expand-btn" id="expand-p3" aria-expanded="false" aria-controls="p3-details">Read more</button>
+            <div class="project-details" id="p3-details" hidden>
+              <div class="detail-part">
+                <p class="detail-label">Purpose</p>
+                <p>A honeypot is a decoy server that attracts attackers so you can study what they do. Instead of running a risky live honeypot, I chose to analyze a large real dataset so I could put all my effort into data work: parsing, cleaning, statistics, and clearly communicating results as a cyber threat intelligence (CTI) report.</p>
+              </div>
+              <div class="detail-part">
+                <p class="detail-label">What I did</p>
+                <p>I am using the public CyberLab honeynet dataset, collected by a honeypot called Cowrie. My sample covers three days (186,015 attack sessions and 993,448 events). I built a two-stage pipeline: stage one cleans the raw data day by day, and stage two aggregates it and removes sensitive details such as plaintext passwords and attacker IP identifiers before anything is published. The pipeline ends with an integrity check that fails loudly if the row counts don't match. Next I plan to analyze password-guessing patterns, groups of attackers using the same tools, and what attackers do after logging in.</p>
+              </div>
+              <div class="detail-part">
+                <p class="detail-label">What I learned so far</p>
+                <p>Handling sensitive data takes deliberate design, so I keep full-detail working data private and only publish redacted, aggregated tables. Hashing is not always real protection: an IPv4 address hash can be reversed by brute force, and a hash of a weak password can be recovered in seconds. I also learned to state limitations up front: three days cannot show trends over time, and the honeypot settings differed between sensors, so conclusions must be careful.</p>
+              </div>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year">2026</span> Bonnie. Thanks for stopping by!</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
